@@ -1,0 +1,10 @@
+# The author's environment, in which the shipped outputs were produced: Python 3.13.17.
+# Install with:  pip install -r requirements.txt
+
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.5
+matplotlib==3.11.2
+sympy==1.14.0
+# Required by pandas.read_excel for the SPF .xlsx workbooks. Easy to miss: nothing imports it directly.
+openpyxl==3.1.5

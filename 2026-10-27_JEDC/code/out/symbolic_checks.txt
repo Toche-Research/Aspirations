@@ -1,0 +1,133 @@
+==============================================================================
+1. Corollary 1 and the Remark on satisfaction: a*(c), Delta, U(c,a*(c))
+==============================================================================
+PASS  U_c = c^{-gamma} a^{1+theta}
+PASS  U_a = (1+theta) c^{1-gamma} a^theta/(1-gamma)
+PASS  B'(a) = kappa a^{-b}
+PASS  a*(c) solves U_a + B' = 0
+PASS  a*(c) propto c^{(gamma-1)/(theta+b)}
+PASS  curvature of U~ equals Delta = 1 + (gamma-1)(b-1)/(theta+b)
+PASS  envelope U~'(c) = U_c(c,a*(c))
+PASS  U~'(c) > 0 ... U~_x = A0^{1+theta} c^{1-Delta}
+PASS  b = 0: Delta = (1+theta-gamma)/theta
+PASS  b = 1: Delta = 1
+PASS  b -> infinity: Delta -> gamma
+PASS  Delta increasing in b  [dDelta/db = (gamma - 1)*(theta + 1)/(b + theta)**2]
+PASS  gamma - Delta = (1+theta)(gamma-1)/(theta+b)
+PASS  dlog a*/dlog c = (gamma-Delta)/(1+theta)
+PASS  U(c,a*(c)) = 1/(gamma-1) - K c^{1-Delta}: K independent of c
+PASS  K = kappa a*(1)^{1-b}/(1+theta)
+PASS  K > 0  [K = exp(logA0*(theta + 1))/(gamma - 1)]
+PASS  dU(c,a*)/dlog c = -K(1-Delta) c^{1-Delta}
+PASS  U~ = U + B rises at rate U_c (envelope); U falls iff Delta < 1: U_x + K(1-Delta)c^{1-Delta} = 0 (shown above)
+
+==============================================================================
+2. Appendix B: the individual Euler equation and (eq:ma1)
+==============================================================================
+PASS  aspiration FOC solved by (theta+b) log a_{t+1} = const - log E_t c_{t+1}^{1-gamma}
+PASS  (theta+b) log a_{t+1} = const - (1-gamma)(log c_t+mu_t) - (1-gamma)^2 sigma^2/2
+PASS  log U_c(c_t,a_t) = const - Delta log c_t - (gamma-Delta) eps_t
+PASS  log E_t U_c(c_{t+1},a_{t+1}) = const - Delta(log c_t+mu_t) + gamma^2 sigma^2/2  (same const)
+PASS  Euler equation has a unique solution for mu_t
+PASS  Delta mu_t = log beta + r + gamma^2 sigma^2/2 + (gamma-Delta) eps_t
+PASS  g_{t+1} = kappa_t + theta_h eps_t + eps_{t+1}, theta_h = (gamma-Delta)/Delta
+PASS  power utility (Delta -> gamma as b -> infinity): theta_h -> 0
+PASS  lag-1 autocorrelation of growth = theta_h/(1+theta_h^2)
+
+==============================================================================
+3. Appendix B: the IV estimand (eq:iv), Dynan's loadings and the bounds
+==============================================================================
+PASS  n=1: (eq:annual) G_t = n kappa + theta_h ell_{t-1} + (1+theta_h) F_t + ell_t
+PASS  n=1: alpha = theta_h omega/(1 - omega_- + theta_h(1-omega))
+PASS  n=1: alpha independent of surprises before ell_{t-1}
+PASS  n=1: equal loading, omega_-=0: alpha = theta_h/(n+(n-1)theta_h)
+PASS  n=2: (eq:annual) G_t = n kappa + theta_h ell_{t-1} + (1+theta_h) F_t + ell_t
+PASS  n=2: alpha = theta_h omega/(1 - omega_- + theta_h(1-omega))
+PASS  n=2: alpha independent of surprises before ell_{t-1}
+PASS  n=2: equal loading, omega_-=0: alpha = theta_h/(n+(n-1)theta_h)
+PASS  n=3: (eq:annual) G_t = n kappa + theta_h ell_{t-1} + (1+theta_h) F_t + ell_t
+PASS  n=3: alpha = theta_h omega/(1 - omega_- + theta_h(1-omega))
+PASS  n=3: alpha independent of surprises before ell_{t-1}
+PASS  n=3: equal loading, omega_-=0: alpha = theta_h/(n+(n-1)theta_h)
+PASS  n=4: (eq:annual) G_t = n kappa + theta_h ell_{t-1} + (1+theta_h) F_t + ell_t
+PASS  n=4: alpha = theta_h omega/(1 - omega_- + theta_h(1-omega))
+PASS  n=4: alpha independent of surprises before ell_{t-1}
+PASS  n=4: equal loading, omega_-=0: alpha = theta_h/(n+(n-1)theta_h)
+PASS  alpha increasing in theta_h (for 1 - omega_- > 0)
+PASS  alpha -> omega/(1-omega) as theta_h -> infinity
+PASS  n=1, omega=1, omega_-=0: alpha = theta_h
+PASS  omega = 0: alpha = 0
+PASS  theta_h bound = alpha_bar(1-omega_-)/(omega - alpha_bar(1-omega))
+PASS  calendar-year total growth loads month m of A with (13-m) and month m of A-1 with (m-1)
+PASS  n=1, M=1: weight sums (last, other, before-last) = (6.5, 0.0, 5.5)  [got 6.500, 0.000, 5.500]
+PASS  n=1, M=1: omega=0.54, omega_-=0.46  [omega=0.5417, omega_-=0.4583]
+PASS  n=1, M=6: weight sums (last, other, before-last) = (2.3333333333333335, 0.0, 8.833333333333334)  [got 2.333, 0.000, 8.833]
+PASS  n=1, M=6: omega=0.21, omega_-=0.79  [omega=0.2090, omega_-=0.7910]
+PASS  n=4, M=1: weight sums (last, other, before-last) = (0.5, 6.0, 2.5)  [got 0.500, 6.000, 2.500]
+PASS  n=4, M=1: omega=0.056, omega_-=0.28  [omega=0.0556, omega_-=0.2778]
+PASS  Wald upper limit -0.039 + 1.96*0.069 = 0.096
+PASS  n=1, M=1: theta_h <= 0.1 from alpha_bar = 0.096  [bound = 0.1045]
+      gamma-Delta = theta_h*Delta <= 0.052 at Delta=1/2
+      gamma-Delta = theta_h*Delta <= 0.094 at Delta=0.9
+PASS  n=1, M=6: theta_h <= 0.15 from alpha_bar = 0.096  [bound = 0.1508]
+      gamma-Delta = theta_h*Delta <= 0.075 at Delta=1/2
+      gamma-Delta = theta_h*Delta <= 0.136 at Delta=0.9
+PASS  n=4, M=1: omega = 1/18 <= 0.056  [omega = 0.0556]
+PASS  n=4, M=1: alpha < omega/(1-omega) = 0.059 < 0.096 for every theta_h  [omega/(1-omega) = 0.0588]
+PASS  n=4, M=4: omega = 0 (last quarter of lagged period lies in A+1)  [omega = 0.0]
+PASS  n=4, M=6: omega = 0 (last quarter of lagged period lies in A+1)  [omega = 0.0]
+PASS  n=4, M=9: omega = 0 (last quarter of lagged period lies in A+1)  [omega = 0.0]
+PASS  n=4, M=12: omega = 0 (last quarter of lagged period lies in A+1)  [omega = 0.0]
+
+==============================================================================
+4. Appendix B: yield loading from the SDF of Proposition 4; the bound
+==============================================================================
+PASS  (eq:sdf) log M_{t+1} = log beta - Delta mu - gamma eps_{t+1} + (gamma-Delta) eps_t
+PASS  (eq:rf) r^f_{t+1} = -log beta + Delta mu - gamma^2 sigma^2/2 - (gamma-Delta) eps_t
+PASS  sd(r^f) = (gamma-Delta) sigma
+PASS  j=1: log M_{t,t+j} = j log beta + (gamma-Delta) g_t - Delta sum_{i<j} g_{t+i} - gamma g_{t+j}
+PASS  j=1: coefficient of eps_t in log M_{t,t+j} is gamma-Delta
+PASS  j=1: annualized yield at m=jh loads -(gamma-Delta)/m on eps_t
+PASS  j=1: strip log premium = (gamma+(j-1)Delta) sigma^2
+PASS  j=2: log M_{t,t+j} = j log beta + (gamma-Delta) g_t - Delta sum_{i<j} g_{t+i} - gamma g_{t+j}
+PASS  j=2: coefficient of eps_t in log M_{t,t+j} is gamma-Delta
+PASS  j=2: annualized yield at m=jh loads -(gamma-Delta)/m on eps_t
+PASS  j=2: strip log premium = (gamma+(j-1)Delta) sigma^2
+PASS  j=3: log M_{t,t+j} = j log beta + (gamma-Delta) g_t - Delta sum_{i<j} g_{t+i} - gamma g_{t+j}
+PASS  j=3: coefficient of eps_t in log M_{t,t+j} is gamma-Delta
+PASS  j=3: annualized yield at m=jh loads -(gamma-Delta)/m on eps_t
+PASS  j=3: strip log premium = (gamma+(j-1)Delta) sigma^2
+PASS  j=4: log M_{t,t+j} = j log beta + (gamma-Delta) g_t - Delta sum_{i<j} g_{t+i} - gamma g_{t+j}
+PASS  j=4: coefficient of eps_t in log M_{t,t+j} is gamma-Delta
+PASS  j=4: annualized yield at m=jh loads -(gamma-Delta)/m on eps_t
+PASS  j=4: strip log premium = (gamma+(j-1)Delta) sigma^2
+PASS  j=5: log M_{t,t+j} = j log beta + (gamma-Delta) g_t - Delta sum_{i<j} g_{t+i} - gamma g_{t+j}
+PASS  j=5: coefficient of eps_t in log M_{t,t+j} is gamma-Delta
+PASS  j=5: annualized yield at m=jh loads -(gamma-Delta)/m on eps_t
+PASS  j=5: strip log premium = (gamma+(j-1)Delta) sigma^2
+PASS  forward rate 1h->2h independent of eps_t
+PASS  forward rate 2h->3h independent of eps_t
+PASS  forward rate 3h->4h independent of eps_t
+PASS  forward rate 4h->5h independent of eps_t
+PASS  r^{(h)} loads -(gamma-Delta) on the annualized surprise e_t = eps_t/h
+PASS  Var(r^{(h)}+v) = (gamma-Delta)^2 Var(e) + Var(v) when Cov(e,v) = 0
+PASS  sd(r^{(h)}) >= (gamma-Delta) sd(e), i.e. gamma-Delta <= sd(r)/sd(e)  [difference is Var(v) >= 0]
+PASS  i.i.d. growth: Var(e) = sigma^2/h so B(h) = sqrt(h) sd(r)/sigma
+PASS  first differences, white-noise surprise: Var(Delta e) = 2 Var(e)
+PASS  maturity m > h: gamma-Delta <= m sd(y^{(m)})/sd(eps)
+PASS  Prop 5(i): (1+theta) log a_{t+1} = const + (gamma-Delta)[log c_t + mu_t - (gamma-1) sigma_t^2/2]
+PASS  Prop 5(ii): r^f = -log beta + gamma mu_t - gamma^2 s_t^2/2 - (gamma-Delta)[g_t + (mu_t-mu_{t-1}) - (gamma-1)(s_t^2-s_{t-1}^2)/2]
+PASS  Prop 5(ii): coefficients on (mu_t, mu_{t-1}, g_t) are (Delta, gamma-Delta, -(gamma-Delta))
+PASS  Prop 5(iii): impact of d sigma^2 with aspirations = -[gamma^2 - (gamma-Delta)(gamma-1)]/2
+
+==============================================================================
+5. Appendix B: satisfaction against the aspiration
+==============================================================================
+PASS  1/(gamma-1) - U(c,a) = c^{1-gamma} a^{1+theta}/(gamma-1)
+PASS  S = -log[1/(gamma-1) - U(c_{t+1},a_{t+1})] = const + (Delta-1)(log c_t+mu_t) + (gamma-1) eps_{t+1} + (gamma-Delta)(gamma-1) sigma_t^2/2  [remaining constant = (b*log(gamma - 1) + log(kappa**(-theta - 1)*(theta + 1)**(theta + 1)) - log(gamma - 1))/(b + theta)]
+PASS  coefficient on anticipated log consumption (log c_t + mu_t) is Delta-1
+PASS  coefficient on the surprise eps_{t+1} is gamma-1
+      note: the paper's Remark uses -log[1/(gamma-1) - U], the positive distance from the bound, not -log(-U).
+
+==============================================================================
+ALL CHECKS PASS

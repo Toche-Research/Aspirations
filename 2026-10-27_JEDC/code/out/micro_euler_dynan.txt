@@ -1,0 +1,22 @@
+illustrative: annual aspirations, instrument loads the lagged period only: theta_h=0.3, n=1, w=1.0000, w_=0.0000: formula 0.3000, simulated IV 0.3003, with range dummies 0.2997
+illustrative: annual, loads 7/12 on the lagged period and 5/12 on the one before: theta_h=0.3, n=1, w=0.5833, w_=0.4167: formula 0.2471, simulated IV 0.2485, with range dummies 0.2472
+illustrative: quarterly aspirations, equal loading on the four quarters, none earlier: theta_h=0.3, n=4, w=0.2500, w_=0.0000: formula 0.0612, simulated IV 0.0618, with range dummies 0.0600
+illustrative: quarterly, loads first three quarters and the last of the previous year: theta_h=0.3, n=4, w=0.0000, w_=0.2500: formula 0.0000, simulated IV 0.0006, with range dummies -0.0014
+illustrative: quarterly, unequal loading on the four quarters: theta_h=0.3, n=4, w=0.0909, w_=0.0000: formula 0.0214, simulated IV 0.0219, with range dummies 0.0198
+illustrative: monthly aspirations, equal loading: theta_h=0.3, n=12, w=0.0833, w_=0.0000: formula 0.0196, simulated IV 0.0185, with range dummies 0.0186
+illustrative: quarterly, equal loading, large theta_h: theta_h=1.0, n=4, w=0.2500, w_=0.0000: formula 0.1429, simulated IV 0.1437, with range dummies 0.1414
+Dynan (2000) Table 2 col. 1: alpha = -0.039 (0.069); upper 95% limit 0.0962
+Triangular loading (growth of calendar-year totals, random-walk income), interview month M:
+  n=1, M=1: w=0.542, w_=0.458; formula (theta_h=0.3) 0.2393, simulated 0.2397; theta_h <= 0.105; gamma-Delta <= 0.052 (Delta=1/2), 0.094 (Delta=0.9)
+  n=1, M=2: w=0.458, w_=0.542; formula (theta_h=0.3) 0.2215, simulated 0.2221; theta_h <= 0.109; gamma-Delta <= 0.054 (Delta=1/2), 0.098 (Delta=0.9)
+  n=1, M=3: w=0.385, w_=0.615; formula (theta_h=0.3) 0.2027, simulated 0.2029; theta_h <= 0.114; gamma-Delta <= 0.057 (Delta=1/2), 0.102 (Delta=0.9)
+  n=1, M=4: w=0.319, w_=0.681; formula (theta_h=0.3) 0.1829, simulated 0.1833; theta_h <= 0.121; gamma-Delta <= 0.061 (Delta=1/2), 0.109 (Delta=0.9)
+  n=1, M=5: w=0.261, w_=0.739; formula (theta_h=0.3) 0.1622, simulated 0.1622; theta_h <= 0.132; gamma-Delta <= 0.066 (Delta=1/2), 0.119 (Delta=0.9)
+  n=1, M=6: w=0.209, w_=0.791; formula (theta_h=0.3) 0.1405, simulated 0.1406; theta_h <= 0.151; gamma-Delta <= 0.076 (Delta=1/2), 0.136 (Delta=0.9)
+  n=4, M=1: w=0.056, w_=0.278; formula (theta_h=0.3) 0.0166, simulated 0.0172; no bound (max alpha = w/(1-w) = 0.059 < 0.096)
+  n=4, M=2: w=0.030, w_=0.333; formula (theta_h=0.3) 0.0095, simulated 0.0103; no bound (max alpha = w/(1-w) = 0.031 < 0.096)
+  n=4, M=3: w=0.011, w_=0.382; formula (theta_h=0.3) 0.0037, simulated 0.0039; no bound (max alpha = w/(1-w) = 0.011 < 0.096)
+  n=4, M=4: w=0.000, w_=0.423; formula (theta_h=0.3) 0.0000, simulated 0.0002; no bound (max alpha = w/(1-w) = 0.000 < 0.096)
+  n=4, M=5: w=0.000, w_=0.455; formula (theta_h=0.3) 0.0000, simulated -0.0000; no bound (max alpha = w/(1-w) = 0.000 < 0.096)
+  n=4, M=6: w=0.000, w_=0.491; formula (theta_h=0.3) 0.0000, simulated -0.0000; no bound (max alpha = w/(1-w) = 0.000 < 0.096)
+max |simulated - formula|: illustrative cases 0.0016, triangular cases 0.0008
